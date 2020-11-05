@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 /**
  * Internal dependencies
  */
-import { THEME_CONSTANTS, themeHelpers } from '../../';
+import { THEME_CONSTANTS, themeHelpers } from '../../theme';
 import { BUTTON_SIZES, BUTTON_TYPES, BUTTON_VARIANTS } from './constants';
 
 const Base = styled.button(
@@ -178,7 +178,7 @@ const ButtonOptions = {
   [BUTTON_VARIANTS.ICON]: ButtonIcon,
 };
 
-export const Button = ({
+const Button = ({
   size = BUTTON_SIZES.MEDIUM,
   type = BUTTON_TYPES.PLAIN,
   variant = BUTTON_VARIANTS.RECTANGLE,
@@ -208,4 +208,4 @@ Button.propTypes = {
   activeLabelText: PropTypes.string,
 };
 
-export { BUTTON_SIZES, BUTTON_TYPES, BUTTON_VARIANTS };
+export { Button, BUTTON_SIZES, BUTTON_TYPES, BUTTON_VARIANTS };
