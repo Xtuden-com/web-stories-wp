@@ -18,3 +18,4 @@ export { Text, Display, Headline } from './typography';
 export * from './button';
 export { Modal } from './modal';
 export { Pill } from './pill';
+export { Dialog } from './dialog';
