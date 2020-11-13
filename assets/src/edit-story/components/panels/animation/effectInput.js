@@ -16,18 +16,28 @@
 
 /**
  * External dependencies
- */
+ */ import { useCallback } from 'react';
+
 import PropTypes from 'prop-types';
 
 /**
  * Internal dependencies
  */
-import { FIELD_TYPES } from '../../../../animation/constants';
+import {
+  DIRECTION,
+  FIELD_TYPES,
+  ROTATION,
+} from '../../../../animation/constants';
 import { GeneralAnimationPropTypes } from '../../../../animation/outputs/types';
 import { AnimationFormPropTypes } from '../../../../animation/types';
 import { DropDown, BoxedNumeric } from '../../form';
+import { DirectionRadioInput } from './directionRadioInput';
 
 function EffectInput({ effectProps, effectConfig, field, onChange }) {
+  const directionControlOnChange = useCallback(
+    ({ nativeEvent: { target } }) => onChange(target.value, true),
+    [onChange]
+  );
   switch (effectProps[field].type) {
     case FIELD_TYPES.DROPDOWN:
       return (
@@ -38,6 +48,26 @@ function EffectInput({ effectProps, effectConfig, field, onChange }) {
             value: v,
             name: v,
           }))}
+        />
+      );
+    case FIELD_TYPES.DIRECTION_PICKER:
+      return (
+        <DirectionRadioInput
+          directions={Object.values(DIRECTION)}
+          defaultChecked={
+            effectConfig[field] || effectProps[field].defaultValue
+          }
+          onChange={directionControlOnChange}
+        />
+      );
+    case FIELD_TYPES.ROTATION_PICKER:
+      return (
+        <DirectionRadioInput
+          directions={[DIRECTION.LEFT_TO_RIGHT, DIRECTION.RIGHT_TO_LEFT]}
+          defaultChecked={
+            effectConfig[field] || effectProps[field].defaultValue
+          }
+          onChange={directionControlOnChange}
         />
       );
     default:
