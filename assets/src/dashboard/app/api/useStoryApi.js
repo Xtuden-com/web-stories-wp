@@ -43,6 +43,7 @@ import storyReducer, {
 } from '../reducer/stories';
 import { getStoryPropsToSave, addQueryArgs } from '../../utils';
 import { reshapeStoryObject, reshapeStoryPreview } from '../serializers';
+import { ERRORS } from '../textContent';
 
 const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
   const [state, dispatch] = useReducer(storyReducer, defaultStoriesState);
@@ -67,8 +68,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           type: STORY_ACTION_TYPES.FETCH_STORIES_FAILURE,
           payload: {
             message: {
-              body: __('Cannot connect to data source', 'web-stories'),
-              title: __('Unable to Load Stories', 'web-stories'),
+              body: ERRORS.LOAD_STORIES.DEFAULT_MESSAGE,
+              title: ERRORS.LOAD_STORIES.TITLE,
             },
           },
         });
@@ -122,7 +123,7 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Load Stories', 'web-stories'),
+              title: ERRORS.LOAD_STORIES.TITLE,
             },
             code: err.code,
           },
@@ -166,7 +167,7 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Update Story', 'web-stories'),
+              title: ERRORS.UPDATE_STORY.TITLE,
             },
             code: err.code,
           },
@@ -190,7 +191,7 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Delete Story', 'web-stories'),
+              title: ERRORS.DELETE_STORY.TITLE,
             },
             code: err.code,
           },
@@ -268,7 +269,7 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Render Preview', 'web-stories'),
+              title: ERRORS.RENDER_PREVIEW.TITLE,
             },
             code: err.code,
           },
@@ -327,7 +328,7 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Create Story From Template', 'web-stories'),
+              title: ERRORS.CREATE_STORY_FROM_TEMPLATE.TITLE,
             },
             code: err.code,
           },
@@ -388,7 +389,7 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi }) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Duplicate Story', 'web-stories'),
+              title: ERRORS.DUPLICATE_STORY.TITLE,
             },
             code: err.code,
           },

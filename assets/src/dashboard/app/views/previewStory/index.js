@@ -36,6 +36,7 @@ import { Close as CloseIcon } from '../../../icons';
 import { StoryPropType } from '../../../types';
 import { useResizeEffect } from '../../../utils';
 import useApi from '../../api/useApi';
+import { ERRORS } from '../../textContent';
 
 const CLOSE_BUTTON_SIZE = {
   HEIGHT: 30,
@@ -146,7 +147,7 @@ const PreviewStory = ({ story, handleClose }) => {
       localStorage.removeItem(AMP_LOCAL_STORAGE);
     }
     if (!story || !story.pages.length) {
-      setPreviewError(__('Unable to Render Preview', 'web-stories'));
+      setPreviewError(ERRORS.RENDER_PREVIEW.TITLE);
     } else {
       createStoryPreview(story);
     }

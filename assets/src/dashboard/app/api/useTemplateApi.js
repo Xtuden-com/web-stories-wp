@@ -21,11 +21,6 @@ import { useCallback, useMemo, useReducer } from 'react';
 import queryString from 'query-string';
 
 /**
- * WordPress dependencies
- */
-import { __ } from '@wordpress/i18n';
-
-/**
  * Internal dependencies
  */
 import { toUTCDate } from '../../../date';
@@ -35,6 +30,7 @@ import templateReducer, {
   defaultTemplatesState,
   ACTION_TYPES as TEMPLATE_ACTION_TYPES,
 } from '../reducer/templates';
+import { ERRORS } from '../textContent';
 
 export function reshapeTemplateObject(isLocal) {
   return ({
@@ -137,8 +133,8 @@ const useTemplateApi = (dataAdapter, config) => {
           type: TEMPLATE_ACTION_TYPES.FETCH_MY_TEMPLATES_FAILURE,
           payload: {
             message: {
-              body: __('Cannot connect to data source', 'web-stories'),
-              title: __('Unable to Load Templates', 'web-stories'),
+              body: ERRORS.LOAD_TEMPLATES.DEFAULT_MESSAGE,
+              title: ERRORS.LOAD_TEMPLATES.TITLE,
             },
           },
         });
@@ -187,7 +183,7 @@ const useTemplateApi = (dataAdapter, config) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Load Templates', 'web-stories'),
+              title: ERRORS.LOAD_TEMPLATES.TITLE,
             },
             code: err.code,
           },
@@ -286,7 +282,7 @@ const useTemplateApi = (dataAdapter, config) => {
           payload: {
             message: {
               body: err.message,
-              title: __('Unable to Create Template from Story', 'web-stories'),
+              title: ERRORS.CREATE_TEMPLATE_FROM_STORY.TITLE,
             },
             code: err.code,
           },
