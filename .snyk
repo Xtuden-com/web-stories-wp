@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@wordpress/components > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - react-color > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/components > @wordpress/rich-text > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/components > react-dates > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - react-color > reactcss > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - styled-components > @babel/traverse > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - styled-components > babel-plugin-styled-components > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/components > @wordpress/rich-text > @wordpress/data > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - styled-components > @babel/traverse > @babel/generator > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/block-editor > @wordpress/components > react-dates > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/components > @wordpress/rich-text > @wordpress/data > @wordpress/compose > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - styled-components > babel-plugin-styled-components > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - styled-components > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/block-editor > @wordpress/components > @wordpress/rich-text > @wordpress/data > @wordpress/redux-routine > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/components > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - styled-components > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/block-editor > @wordpress/components > @wordpress/rich-text > @wordpress/data > @wordpress/compose > @wordpress/element > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/block-editor > @wordpress/components > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2022-03-25T20:06:16.493Z'
+    - '@wordpress/block-editor > @wordpress/components > @emotion/core > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2022-03-25T20:06:16.493Z'

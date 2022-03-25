@@ -70,7 +70,8 @@
     "use-reduction": "^2.1.0",
     "uuid": "^8.3.1",
     "valid-url": "^1.0.9",
-    "web-animations-js": "^2.3.2"
+    "web-animations-js": "^2.3.2",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@ampproject/toolbox-optimizer": "^2.6.0",
@@ -244,7 +245,9 @@
     "workflow:version": "./bin/commander.js version",
     "workflow:build-plugin": "./bin/commander.js build-plugin",
     "workflow:fonts": "./bin/commander.js build-fonts",
-    "workflow:templates": "./bin/commander.js update-templates"
+    "workflow:templates": "./bin/commander.js update-templates",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -267,5 +270,6 @@
     "*.php": "npm run lint:php:fix",
     "*.(xml|xml.dist)": "prettier --write",
     "*.yml": "prettier --write"
-  }
+  },
+  "snyk": true
 }
