@@ -49,7 +49,7 @@
     "flagged": "^2.0.1",
     "history": "^5.0.0",
     "mousetrap": "^1.6.5",
-    "patch-package": "^6.2.2",
+    "patch-package": "^6.4.6",
     "polished": "^4.0.3",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.7",
